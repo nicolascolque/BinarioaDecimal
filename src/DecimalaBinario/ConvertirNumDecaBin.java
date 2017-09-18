@@ -1,58 +1,39 @@
 package DecimalaBinario;
+import java.util.Scanner;
+
 public class ConvertirNumDecaBin 
 
 {
+    
     public static void main(String[] args) 
         {
-            Convercion convertir = new Convercion();
-            convertir.Convertir();
+            Convercion conversion = new Convercion(); 
+            int opcion = 0;
+            Scanner sc = new Scanner(System.in);
+            
+            while (opcion != 3)
+            {
+                System.out.println("Ingrese que dese hacer ");
+                System.out.println("1- para convertir de Binario a decimal ");
+                System.out.println("2- para convertir de decimal a binario ");
+                System.out.println("3- para salir ...");
+                opcion = sc.nextInt();
+
+                switch (opcion)
+                {
+                    case 1: 
+                         conversion.Convertir();
+                    break;
+
+                    case 2: 
+                        conversion.convertir2();
+                        break;
+                    case 3:
+                        System.out.println("salir");
+                        break;
+
+                }       
+            }
         }
 }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    /*long numero, aux, digito, decimal;
-     int exponente;
-     boolean esBinario;
-     Scanner sc = new Scanner(System.in);
-
-    //Leer un número por teclado y comprobar que es binario
-     do {
-          System.out.print("Introduce un numero binario: ");
-          numero = sc.nextLong();
-          //comprobamos que sea un número binario es decir
-          //que este formado solo por ceros y unos
-          esBinario = true;
-          aux = numero;
-          while (aux != 0) {
-                     digito = aux % 10; //última cifra del números
-                     if (digito != 0 && digito != 1) { //si no es 0 ó 1
-                          esBinario = false; //no es un número binario
-                     }
-                     aux = aux / 10; //quitamos la última cifra para repetir el proceso
-           }
-      } while (!esBinario); //se vuelve a pedir si no es binario
-
-      //proceso para pasar de binario a decimal
-      exponente = 0;
-      decimal = 0; //será el equivalente en base decimal
-      while (numero != 0) {
-                //se toma la última cifra
-                digito = numero % 10;
-                //se multiplica por la potencia de 2 correspondiente y se suma al número
-                decimal = decimal + digito * (int) Math.pow(2, exponente);
-                //se aumenta el exponente
-                exponente++;
-                //se quita la última cifra para repetir el proceso
-                numero = numero / 10;
-      }
-      System.out.println("Decimal: " + decimal);
-   }
-}
-*/

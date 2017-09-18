@@ -1,6 +1,7 @@
 package DecimalaBinario;
 import java.math.MathContext;
 import java.util.Scanner;
+
 public class Convercion 
 {
     public void Convertir()
@@ -35,10 +36,38 @@ public class Convercion
                             digito = numero % 10;//separa el ultimo numero 
                             //suma los numeros elevados a la potencia de 2
                             decimal= decimal + digito * (int)Math.pow(2, exp);
-                             exp++;//cada vez que pasa suma el exp + 1
-                             numero = numero/10;//quito el ultimo numero 
+                            exp++;//cada vez que pasa suma el exp + 1
+                            numero = numero/10;//quito el ultimo numero 
                         }
                 System.out.println("El Numero decimal es: " + decimal);
+                System.out.println("");
+    }
+    public void convertir2()
+    {
+        int numero , aux ,  digito , exp;
+        int binario;
+        Scanner sc= new Scanner(System.in);
+        do 
+            {
+                System.out.println("Ingresa un numero decimal > a 0");
+                numero = sc.nextInt();
+            }   
+                while (numero <0);
+                {
+                    exp = 0;
+                    binario = 0;
+                
+                    while (numero != 0)
+                    {
+                        digito = numero %2;
+                        binario = binario + digito * (int)Math.pow(10, exp); 
+                        exp ++;
+                        numero = numero/2;
+                    }
+                 System.out.println("El numero binario es: " + binario);
+                 System.out.println("");
+                }
+            
     }
 }
 
